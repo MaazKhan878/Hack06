@@ -20,13 +20,20 @@ int rgbToCMYK(int r, int g, int b, double *c, double *m, double *y, double *k){
     double red = scale(r);
     double green = scale(g);
     double blue = scale(b);
+   
+   
     // FORMULA: TO convert the filter from rgb to CMYK
     *k = 1 - max(red,green,blue);
     *c = (1 - r - *k)/(1 - *k);
     *m = (1 - g - *k)/(1 - *k);
     *y = (1 - b - *k)/(1 - *k);
-    // valid Input Return 0;
+     //CONDITION: indicate black color
+    if(*k == 1.0 && *c == 0.0 && *m == 0.0 && *y == 0.0){
+        return 0;
+    }
+    //valid check
     return 0;
+    
 }
 
 

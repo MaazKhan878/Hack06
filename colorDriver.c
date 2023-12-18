@@ -6,6 +6,9 @@ int main(){
     double k, y, c, m;
     int check = rgbToCMYK(r, g, b, &c, &m, &y, &k);
     if(check == 0){
+        printf("Black color\n");
+    }
+    if(check != 1){
         printf("the CMYK FILTER: C = %f , M = %f, K = %f, Y = %f\n",c,m,k,y);
     }
     else{
