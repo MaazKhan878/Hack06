@@ -13,7 +13,7 @@ double scale(int r){
 // Function: which convert the rgb Filter to CMYK filter
 int rgbToCMYK(int r, int g, int b, double *c, double *m, double *y, double *k){
     // ERROR HANDLING: to check the input is valid or not
-    if(r>255 || r<0 ||g>255 || g<0 ||b>255 || b<0){
+    if(r<255 || r>0 ||g<255 || g>0 ||b<255 || b>0){
         return 1;
     }
     // convert to 0,1 scale
